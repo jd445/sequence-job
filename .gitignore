@@ -112,3 +112,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+datafundation比赛/rna.txt
+datafundation比赛/dna.txt
