@@ -37,10 +37,10 @@ if __name__ == '__main__':
         DNA.append(i.split(",")[2].replace(" ", "").replace("\n", ""))
     splice.close()
     # 获取Kmer
-    DNAkmer = k_mergenerator(DNA, 3)
+    DNAkmer = k_mergenerator(DNA, 1)
     # 使用word2vec出基因数据
     genes = word2vec.Text8Corpus("result.txt")
-    model = word2vec.Word2Vec(genes, sg=1, min_count=1, vector_size=100)
+    model = word2vec.Word2Vec(genes, sg=1, min_count=1, vector_size=50)
     print(model)
 
     model.wv.save_word2vec_format("VectorForGene", binary=False)
