@@ -29,7 +29,7 @@ if __name__ == '__main__':
     mirna = pandas.read_csv("mirna_seq.csv",header=0)
     mirna = mirna.values.tolist()
     for i in mirna:
-        i = str(i).replace("'","").replace("\\n","").replace("[","").replace("]","").replace(" ","")
+        i = str(i).replace("'","").replace("\\n","").replace("[","").replace("]","").replace(" ","").replace("\\r","")
         rna_data.update({i.split(",")[0].replace(" ",""):i.split(",")[1].replace(" ","")})
         rna.append(i.split(",")[1].replace(" ",""))
 
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     gene = pandas.read_csv("gene_seq.csv",header=0)
     gene = gene.values.tolist()
     for i in gene:
-        i = str(i).replace("'","").replace("\\n","").replace("[","").replace("]","").replace(" ","")
+        i = str(i).replace("'","").replace("\\n","").replace("[","").replace("]","").replace(" ","").replace("\\r","")
         gene_data.update({i.split(",")[0].replace(" ",""):i.split(",")[1].replace(" ","")})
         dna.append(i.split(",")[1].replace(" ",""))
 
